@@ -16,7 +16,7 @@ get_file(Server, File) ->
   end.
 
 put_file(Server, File, Message) ->
-  Server ! {self(), {put_file, {File, Message}}},
+  Server ! {self(), {put_file, File, Message}},
   receive
     {Server, Content} ->
       Content
